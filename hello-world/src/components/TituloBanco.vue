@@ -1,15 +1,20 @@
 <template>
-  <h1>{{titulo}}</h1>
+  <h1>{{TituloBanco}}</h1>
 </template>
 
-<script>
+<script setup lang="ts">
+defineProps({
+  TituloBanco: String
+})
+</script>
+<!-- <script>
 export default {
     name: 'TituloBanco',
     props: {
         titulo: String
     }
 }
-</script>
+</script> -->
 
 <style scoped>
     h1 {
