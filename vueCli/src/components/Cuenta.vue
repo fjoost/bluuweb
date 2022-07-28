@@ -8,7 +8,11 @@
   </div>
   <hr />
   <AccionSaldo texto="Agregar Saldo" @accion="agregarSaldo" />
-  <AccionSaldo texto="Disminur Saldo" @accion="disminuirSaldo" />
+  <AccionSaldo
+    texto="Disminur Saldo"
+    @accion="disminuirSaldo"
+    :desactivar="desactivar"
+  />
 </template>
 
 <script>
@@ -20,17 +24,20 @@ export default {
   data() {
     return {
       cuenta: "Visa",
-      cantidad: 5000,
+      cantidad: 500,
       estado: true,
       servicios: ["pagos", "giros", "transferencias"],
+      desactivar: false,
     };
   },
   methods: {
     agregarSaldo() {
       this.cantidad = this.cantidad + 100;
+      this.desactivar = false;
     },
     disminuirSaldo() {
       if (this.cantidad === 0) {
+        this.desactivar = true;
         alert("llegaste al final");
         return;
       }

@@ -19,6 +19,6 @@ export default {
 h1 {
   font-weight: 300;
   font-style: italic;
-  color:brown;
+  color: brown;
 }
 </style>
