@@ -6,7 +6,7 @@ export default createStore({
   // spreed operator javascript: accede al objeto state
   // siempre se van a mapear en los computed
   state: {
-    contador: 50
+    contador: 100
   },
   getters: {
   },
@@ -14,8 +14,8 @@ export default createStore({
     incrementar(state) {
       state.contador = state.contador + 10
     },
-    decrecer(state) {
-      state.contador = state.contador - 10
+    decrecer(state, payload) {
+      state.contador = state.contador - numero
     }
   },
   actions: {
@@ -25,8 +25,8 @@ export default createStore({
     accionIncremento({ commit }) {
       commit('incrementar')
     },
-    accionDecrecimiento({ commit }) {
-      commit('decrecer')
+    accionDecrecimiento({ commit }, numero) {
+      commit('decrecer', numero)
     }
   },
   modules: {

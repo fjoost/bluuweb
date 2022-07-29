@@ -37,7 +37,7 @@ export default {
            en el store/index.js
         
         */
-    ...mapActions(["accionIncremento", "accionDecrecimiento"]),
+    ...mapActions(["accionIncremento"]),
   },
 };
 </script>
