@@ -6,6 +6,7 @@
     <RestButton />
 
     <hr />
+    <h1>Botonesh dinamicosh macintosh</h1>
     <ActionButton />
     <ActionButton :estado="false" />
   </div>
