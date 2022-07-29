@@ -2,8 +2,8 @@
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png" />
     <h1 :style="colorContador">{{ titulo }}: {{ contador }}</h1>
-    <button @click="incrementar">incrementar</button>
-    <button @click="decrecer">decrecer</button>
+    <button @click="accionIncremento">incrementar</button>
+    <button @click="accionDecrecimiento">decrecer</button>
   </div>
 </template>
 
@@ -11,7 +11,7 @@
 // @ is an alias to /src
 import HelloWorld from "@/components/HelloWorld.vue";
 // está dentro de un obj y se llama mapState
-import { mapMutations, mapState } from "vuex";
+import { mapActions, mapMutations, mapState } from "vuex";
 
 export default {
   name: "HomeView",
@@ -25,11 +25,11 @@ export default {
   computed: {
     ...mapState(["contador"]),
     colorContador() {
-      return [this.contador > 100 ? { color: "green" } : { color: "red" }];
+      return [this.contador >= 0 ? { color: "green" } : { color: "red" }];
     },
   },
   methods: {
-    ...mapMutations(["incrementar", "decrecer"]),
+    ...mapActions(["accionIncremento", "accionDecrecimiento"]),
   },
 };
 </script>
