@@ -1,6 +1,11 @@
 <template>
   <Titulo texto="Página de Blog 2022" />
-  <button @click="consumirAPI">Consumir API</button>
+  <!-- <button @click="consumirAPI">Consumir API</button> -->
+  <div v-for="item in arrayBlog" :key="item.id">
+    <router-link :to="`/blog/${item.id}`">
+      {{ item.id }} - {{ item.title }}
+    </router-link>
+  </div>
 </template>
 
 <script>
@@ -20,11 +25,15 @@ export default {
       try {
         const data = await fetch("https://jsonplaceholder.typicode.com/posts/");
         const array = await data.json();
-        console.log(array);
+        this.arrayBlog = array;
+        return this.arrayBlog;
       } catch (error) {
         console.log(error);
       }
     },
+  },
+  created() {
+    this.consumirAPI();
   },
 };
 </script>
