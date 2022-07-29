@@ -3,20 +3,23 @@
     <img alt="Vue logo" src="../assets/logo.png" />
     <h1 :style="colorContador">{{ titulo }}: {{ contador }}</h1>
     <button @click="accionIncremento">incrementar</button>
-    <button @click="accionDecrecimiento">decrecer</button>
+    <RestButton />
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from "@/components/HelloWorld.vue";
 // está dentro de un obj y se llama mapState
 import { mapActions, mapMutations, mapState } from "vuex";
+import RestButton from "../components/RestButton.vue";
 
 export default {
   name: "HomeView",
   // map state devuelve un objeto, si se cooca dentro del otro objeto, no podremos utilizar mas las propiedades computadas
   // para eso se utiliza el spreed operator
+
+  components: {
+    RestButton,
+  },
   data() {
     return {
       titulo: "Mi contador Vuex",
@@ -30,10 +33,10 @@ export default {
   },
   methods: {
     /* Aquí van el mapeo de las Actions
-       Se les pasa como paramtro el nombre de las actions definidas
-       en el store/index.js
-    
-    */
+           Se les pasa como paramtro el nombre de las actions definidas
+           en el store/index.js
+        
+        */
     ...mapActions(["accionIncremento", "accionDecrecimiento"]),
   },
 };
