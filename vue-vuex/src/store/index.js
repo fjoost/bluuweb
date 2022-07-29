@@ -6,11 +6,17 @@ export default createStore({
   // spreed operator javascript: accede al objeto state
   // siempre se van a mapear en los computed
   state: {
-    contador: 500
+    contador: 50
   },
   getters: {
   },
   mutations: {
+    incrementar(state) {
+      state.contador = state.contador + 10
+    },
+    decrecer(state) {
+      state.contador = state.contador - 10
+    }
   },
   actions: {
   },
