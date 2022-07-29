@@ -29,6 +29,11 @@ export default {
     },
   },
   methods: {
+    /* Aquí van el mapeo de las Actions
+       Se les pasa como paramtro el nombre de las actions definidas
+       en el store/index.js
+    
+    */
     ...mapActions(["accionIncremento", "accionDecrecimiento"]),
   },
 };

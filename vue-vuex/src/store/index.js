@@ -19,6 +19,8 @@ export default createStore({
     }
   },
   actions: {
+    // defino el nombre de mi Action, se le pasa el parametro commmit (documentacion)
+    // el valor del commit será el nombre de mi Mutations incremetar -> incrementar
     accionIncremento({ commit }) {
       commit('incrementar')
     },
