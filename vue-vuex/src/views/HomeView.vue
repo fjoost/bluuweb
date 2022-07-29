@@ -4,6 +4,10 @@
     <h1 :style="colorContador">{{ titulo }}: {{ contador }}</h1>
     <button @click="accionIncremento">incrementar</button>
     <RestButton />
+
+    <hr />
+    <ActionButton />
+    <ActionButton :estado="false" />
   </div>
 </template>
 
@@ -11,6 +15,7 @@
 // está dentro de un obj y se llama mapState
 import { mapActions, mapMutations, mapState } from "vuex";
 import RestButton from "../components/RestButton.vue";
+import ActionButton from "@/components/ActionButton.vue";
 
 export default {
   name: "HomeView",
@@ -19,6 +24,7 @@ export default {
 
   components: {
     RestButton,
+    ActionButton,
   },
   data() {
     return {
