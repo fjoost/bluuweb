@@ -1,17 +1,32 @@
 <template>
   <div>
+    <Titulo :contador="contador" :color="color" />
     <h1 :style="{ color: color }">contador: {{ contador }}</h1>
-    <button @click="aumentar">+</button>
-    <button @click="disminuir">-</button>
+    <input v-model="texto" type="text" />
+    <h2>{{ texto }}</h2>
+    <hr />
+    <p>componente Btn</p>
+    <Btn :textoBoton="'Aumentar'" />
+    <!-- <button @click="aumentar">+</button>
+    <button @click="disminuir">-</button> -->
   </div>
 </template>
-
+s
 <script>
+import Titulo from "../components/Titulo.vue";
 import { computed } from "@vue/reactivity";
 import { ref } from "vue";
+import Btn from "../components/Btn.vue";
 
 export default {
+  components: {
+    Titulo,
+    Btn,
+  },
   setup() {
+    /* es un string entonces se le ponen comillas */
+    const texto = ref("");
+
     /* contador esa una referencia al numero 0, por ende es reactivo
     por lo tanto para acceder al valor de contador va contador.value */
     const contador = ref(0);
@@ -31,7 +46,7 @@ export default {
       por lo tanto se agrega al objeto
 
     */
-
+    /* computed recibe una función de flecha */
     const color = computed(() => {
       if (contador.value < 0) {
         return "red";
@@ -39,8 +54,7 @@ export default {
         return "blue";
       }
     });
-    /* computed recibe una función de flecha */
-    return { contador, aumentar, disminuir, color };
+    return { contador, aumentar, disminuir, color, texto };
   },
 };
 </script>
