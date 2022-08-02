@@ -12,7 +12,7 @@
     <button @click="disminuir">-</button> -->
   </div>
 </template>
-s
+
 <script>
 import Titulo from "../components/Titulo.vue";
 import { computed } from "@vue/reactivity";
