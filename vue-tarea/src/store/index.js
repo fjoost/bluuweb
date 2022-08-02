@@ -13,9 +13,9 @@ export default createStore({
     }
   },
   actions: {
-    buttonUpgradeAction({ commit }, { data }) {
+    buttonAction({ commit }, data) {
       if (data.state) {
-        upgrade()
+        upgradeBalanceMutation(commit, data.payload)
       }
       else {
 

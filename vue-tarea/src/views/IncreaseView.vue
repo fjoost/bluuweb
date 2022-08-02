@@ -7,7 +7,6 @@
 </template>
 
 <script>
-// @ is an alias to /src
 import MsgComponent from "@/components/MsgComponent.vue";
 import ActionButton from "../components/ActionButton.vue";
 export default {
