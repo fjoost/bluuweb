@@ -6,7 +6,8 @@
     <h2>{{ texto }}</h2>
     <hr />
     <p>componente Btn</p>
-    <Btn :textoBoton="'Aumentar'" />
+    <Btn :textoBoton="'Aumentar'" @accion="aumentar" />
+    <Btn :textoBoton="'Disminuir'" @accion="disminuir" />
     <!-- <button @click="aumentar">+</button>
     <button @click="disminuir">-</button> -->
   </div>
